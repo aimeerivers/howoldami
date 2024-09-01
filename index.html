@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>how old am i?</title>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>how old am i?</h1>
+
+    <br>
+
+    <form id="form" style="display: none;">
+      <p><label for="dob">enter your birthdate:</label></p>
+      <p><input type="date" id="dob" name="dob"></p>
+      <p><button type="submit" class="button">submit</button></p>
+    </form>
+
+    <div id="result" style="display: none;">
+      <p>you are</p>
+      <p><div id="age" class="flip-clock"></div></p>
+      <p>years old</p>
+      <p><a id="reset" class="button" href="/">reset</a></p>
+    </div>
+
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

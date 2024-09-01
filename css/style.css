@@ -1,0 +1,75 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #f0f0f0; /* Light gray background */
+  display: flex; /* Use flexbox layout */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
+}
+
+.container {
+  text-align: center;
+}
+
+.flip-clock {
+  display: inline-block;
+  font-size: 2em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.flip-clock .digit {
+  display: inline-flex; /* Use flexbox layout */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  
+  height: 1.5em; /* Set a fixed height for each digit */
+  position: relative;
+  transform-style: preserve-3d;
+  padding: 0; /* Padding around the digits */
+  margin: 1px; /* Margin between digits */
+}
+
+.flip-clock .digit.card {
+  width: 0.9em; /* Set a fixed width for each digit */
+  background-color: #001f3f; /* Dark blue background */
+  color: white; /* White text color */
+  border-radius: 0.1em; /* Slightly rounded corners */
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), /* Top highlight */
+              inset 0 -1px 0 rgba(0, 0, 0, 0.2), /* Bottom shadow */
+              0 2px 5px rgba(0, 0, 0, 0.3); /* Outer shadow */
+}
+
+.flip-clock .digit.slide {
+  animation: slide linear;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  margin-top: 1em;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  background-color: #001f3f; /* Dark blue */
+  border: none;
+  border-radius: 0.25em;
+  text-decoration: none; /* Remove underline */
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Button shadow */
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #003263; /* Darker blue on hover */
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(-20%) rotateX(90deg);
+  }
+
+  100% {
+    transform: translateY(0) rotateX(0deg);
+  }
+}
