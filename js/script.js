@@ -19,7 +19,6 @@ try {
     setInterval(() => {
       updateAge(parsedDate);
     }, 1000);
-
   } else {
     throw new Error("dob not found.");
   }
