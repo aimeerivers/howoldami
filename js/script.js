@@ -11,6 +11,7 @@ try {
     if (isNaN(parsedDate)) {
       throw new Error('Invalid date format.');
     }
+    parsedDate.setHours(0, 0, 0, 0);
 
     updateAge(parsedDate);
     resultElement.style.display = 'block';
