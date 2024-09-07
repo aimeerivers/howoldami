@@ -33,8 +33,7 @@ try {
 
 function updateAge(dob) {
   const now = new Date();
-  const ageInMilliseconds = now - dob;
-  const ageInYears = ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
+  const ageInYears = calculateAge(dob, now);
   const ageInYearsRounded = ageInYears.toFixed(7);
 
   ageElement.innerHTML = ""; // Clear previous content
@@ -60,4 +59,17 @@ function updateAge(dob) {
   });
 
   previousAge = ageInYearsRounded;
+}
+
+function calculateAge(dob, now) {
+  const dobYear = dob.getFullYear();
+  const dobMonth = dob.getMonth();
+  const dobDay = dob.getDate();
+
+  const nowYear = now.getFullYear();
+
+  const age = nowYear - dobYear;
+
+  const yearFraction = (now - new Date(nowYear, dobMonth, dobDay)) / (1000 * 60 * 60 * 24 * 365.25);
+  return age + yearFraction;
 }
