@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/aimeerivers/howoldami/compare/v1.0.2...v1.1.0) (2024-09-15)
+
+
+### Features
+
+* enable dog mode ([#9](https://github.com/aimeerivers/howoldami/issues/9)) ([c1766c0](https://github.com/aimeerivers/howoldami/commit/c1766c00a3eb3ed6b6c94937633a38baecd2cd5b))
+
 ## [1.0.2](https://github.com/aimeerivers/howoldami/compare/v1.0.1...v1.0.2) (2024-09-07)
 
 
