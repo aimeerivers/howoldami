@@ -6,6 +6,8 @@ const params = new URLSearchParams(window.location.search);
 
 try {
   const dob = params.get("dob");
+  const dog = params.get("dog") === "true";
+
   if (dob) {
     const parsedDate = new Date(dob);
     if (isNaN(parsedDate)) {
@@ -13,11 +15,11 @@ try {
     }
     parsedDate.setHours(0, 0, 0, 0);
 
-    updateAge(parsedDate);
+    updateAge(parsedDate, dog);
     resultElement.style.display = "block";
 
     setInterval(() => {
-      updateAge(parsedDate);
+      updateAge(parsedDate, dog);
     }, 1000);
   } else {
     throw new Error("dob not found.");
@@ -31,9 +33,13 @@ try {
   }
 }
 
-function updateAge(dob) {
+function updateAge(dob, dog = false) {
   const now = new Date();
-  const ageInYears = calculateAge(dob, now);
+  let ageInYears = calculateAge(dob, now);
+  if (dog) {
+    ageInYears *= 7;
+  }
+
   const ageInYearsRounded = ageInYears.toFixed(7);
 
   ageElement.innerHTML = ""; // Clear previous content
