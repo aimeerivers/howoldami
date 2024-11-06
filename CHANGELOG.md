@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.6](https://github.com/aimeerivers/howoldami/compare/v1.1.5...v1.1.6) (2024-11-06)
+
+
+### Dependencies
+
+* update dependencies ([#21](https://github.com/aimeerivers/howoldami/issues/21)) ([1a74df9](https://github.com/aimeerivers/howoldami/commit/1a74df9233ed3bbea9ac917b206431130d7cb8a6))
+
 ## [1.1.5](https://github.com/aimeerivers/howoldami/compare/v1.1.4...v1.1.5) (2024-10-30)
 
 
