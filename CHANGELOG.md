@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.9](https://github.com/aimeerivers/howoldami/compare/v1.1.8...v1.1.9) (2024-11-10)
+
+
+### Dependencies
+
+* Update to eslint-config-plus-prettier v4 ([#27](https://github.com/aimeerivers/howoldami/issues/27)) ([ae1751c](https://github.com/aimeerivers/howoldami/commit/ae1751ca996bb0e9c1210c840ea606af22f9a901))
+
 ## [1.1.8](https://github.com/aimeerivers/howoldami/compare/v1.1.7...v1.1.8) (2024-11-10)
 
 
