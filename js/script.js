@@ -24,7 +24,7 @@ try {
   } else {
     throw new Error("dob not found.");
   }
-} catch (error) {
+} catch {
   const formElement = document.getElementById("form");
   if (formElement) {
     formElement.style.display = "block";
