@@ -1,12 +1,20 @@
 const resultElement = document.getElementById("result");
-const ageElement = document.getElementById("age");
-let previousAge = "";
+const yearsElement = document.getElementById("years");
+const monthsElement = document.getElementById("months");
+const weeksElement = document.getElementById("weeks");
+const daysElement = document.getElementById("days");
+
+const previousAge = {
+  years: "",
+  months: "",
+  weeks: "",
+  days: "",
+};
 
 const params = new URLSearchParams(window.location.search);
 
 try {
   const dob = params.get("dob");
-  const dog = params.get("dog") === "true";
 
   if (dob) {
     const parsedDate = new Date(dob);
@@ -15,11 +23,11 @@ try {
     }
     parsedDate.setHours(0, 0, 0, 0);
 
-    updateAge(parsedDate, dog);
+    updateAge(parsedDate);
     resultElement.style.display = "block";
 
     setInterval(() => {
-      updateAge(parsedDate, dog);
+      updateAge(parsedDate);
     }, 1000);
   } else {
     throw new Error("dob not found.");
@@ -33,19 +41,28 @@ try {
   }
 }
 
-function updateAge(dob, dog = false) {
+function updateAge(dob) {
   const now = new Date();
-  let ageInYears = calculateAge(dob, now);
-  if (dog) {
-    ageInYears *= 7;
-  }
+  const ageBreakdown = calculateAgeBreakdown(dob, now);
 
-  const ageInYearsRounded = ageInYears.toFixed(7);
+  // Update each age unit with decimal precision
+  updateAgeUnit(yearsElement, ageBreakdown.years.toFixed(7), previousAge.years);
+  updateAgeUnit(monthsElement, ageBreakdown.months.toFixed(5), previousAge.months);
+  updateAgeUnit(weeksElement, ageBreakdown.weeks.toFixed(4), previousAge.weeks);
+  updateAgeUnit(daysElement, ageBreakdown.days.toFixed(3), previousAge.days);
 
-  ageElement.innerHTML = ""; // Clear previous content
+  // Update previous values
+  previousAge.years = ageBreakdown.years.toFixed(7);
+  previousAge.months = ageBreakdown.months.toFixed(5);
+  previousAge.weeks = ageBreakdown.weeks.toFixed(4);
+  previousAge.days = ageBreakdown.days.toFixed(3);
+}
 
-  // Split the age into individual digits
-  const digits = ageInYearsRounded.split("");
+function updateAgeUnit(element, currentValue, previousValue) {
+  element.innerHTML = ""; // Clear previous content
+
+  // Split the value into individual digits
+  const digits = currentValue.split("");
   digits.forEach((digit, index) => {
     const span = document.createElement("span");
     span.className = "digit";
@@ -55,27 +72,37 @@ function updateAge(dob, dog = false) {
     span.textContent = digit;
 
     // Apply flip animation only if the digit has changed
-    if (previousAge[index] !== digit) {
+    if (previousValue[index] !== digit) {
       const randomDuration = (Math.random() * (0.5 - 0.05) + 0.05).toFixed(2) + "s";
       span.style.animationDuration = randomDuration;
       span.classList.add("slide");
     }
 
-    ageElement.appendChild(span);
+    element.appendChild(span);
   });
-
-  previousAge = ageInYearsRounded;
 }
 
-function calculateAge(dob, now) {
+function calculateAgeBreakdown(dob, now) {
+  // Calculate years using the original accurate method
   const dobYear = dob.getFullYear();
   const dobMonth = dob.getMonth();
   const dobDay = dob.getDate();
-
   const nowYear = now.getFullYear();
 
   const age = nowYear - dobYear;
-
   const yearFraction = (now - new Date(nowYear, dobMonth, dobDay)) / (1000 * 60 * 60 * 24 * 365.25);
-  return age + yearFraction;
+  const totalYears = age + yearFraction;
+
+  // Calculate other units based on total milliseconds for consistency
+  const totalMilliseconds = now - dob;
+  const totalDays = totalMilliseconds / (1000 * 60 * 60 * 24);
+  const totalWeeks = totalDays / 7;
+  const totalMonths = totalDays / 30.44; // Average days per month
+
+  return {
+    years: totalYears,
+    months: totalMonths,
+    weeks: totalWeeks,
+    days: totalDays,
+  };
 }
