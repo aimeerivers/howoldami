@@ -25,8 +25,24 @@
 
       <div id="result" style="display: none">
         <p>you are</p>
-        <p><span id="age" class="flip-clock"></span></p>
-        <p>years old</p>
+        <div class="age-breakdown">
+          <div class="age-unit">
+            <span id="years" class="flip-clock"></span>
+            <label>years old</label>
+          </div>
+          <div class="age-unit">
+            <span id="months" class="flip-clock"></span>
+            <label>months old</label>
+          </div>
+          <div class="age-unit">
+            <span id="weeks" class="flip-clock"></span>
+            <label>weeks old</label>
+          </div>
+          <div class="age-unit">
+            <span id="days" class="flip-clock"></span>
+            <label>days old</label>
+          </div>
+        </div>
         <p><a id="reset" class="button" href="/howoldami">reset</a></p>
       </div>
     </div>
