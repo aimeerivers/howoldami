@@ -15,7 +15,6 @@ const params = new URLSearchParams(window.location.search);
 
 try {
   const dob = params.get("dob");
-  const dog = params.get("dog") === "true";
 
   if (dob) {
     const parsedDate = new Date(dob);
@@ -24,11 +23,11 @@ try {
     }
     parsedDate.setHours(0, 0, 0, 0);
 
-    updateAge(parsedDate, dog);
+    updateAge(parsedDate);
     resultElement.style.display = "block";
 
     setInterval(() => {
-      updateAge(parsedDate, dog);
+      updateAge(parsedDate);
     }, 1000);
   } else {
     throw new Error("dob not found.");
@@ -42,17 +41,9 @@ try {
   }
 }
 
-function updateAge(dob, dog = false) {
+function updateAge(dob) {
   const now = new Date();
   const ageBreakdown = calculateAgeBreakdown(dob, now);
-
-  if (dog) {
-    // Convert to dog years for all units
-    ageBreakdown.years *= 7;
-    ageBreakdown.months *= 7;
-    ageBreakdown.weeks *= 7;
-    ageBreakdown.days *= 7;
-  }
 
   // Update each age unit with decimal precision
   updateAgeUnit(yearsElement, ageBreakdown.years.toFixed(7), previousAge.years);
