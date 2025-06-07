@@ -83,13 +83,21 @@ function updateAgeUnit(element, currentValue, previousValue) {
 }
 
 function calculateAgeBreakdown(dob, now) {
-  const totalMilliseconds = now - dob;
+  // Calculate years using the original accurate method
+  const dobYear = dob.getFullYear();
+  const dobMonth = dob.getMonth();
+  const dobDay = dob.getDate();
+  const nowYear = now.getFullYear();
 
-  // Calculate precise decimal values
+  const age = nowYear - dobYear;
+  const yearFraction = (now - new Date(nowYear, dobMonth, dobDay)) / (1000 * 60 * 60 * 24 * 365.25);
+  const totalYears = age + yearFraction;
+
+  // Calculate other units based on total milliseconds for consistency
+  const totalMilliseconds = now - dob;
   const totalDays = totalMilliseconds / (1000 * 60 * 60 * 24);
   const totalWeeks = totalDays / 7;
   const totalMonths = totalDays / 30.44; // Average days per month
-  const totalYears = totalDays / 365.25; // Account for leap years
 
   return {
     years: totalYears,
