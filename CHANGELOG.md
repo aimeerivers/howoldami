@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/aimeerivers/howoldami/compare/v1.1.16...v1.2.0) (2025-06-07)
+
+
+### Features
+
+* Show months, weeks and days ([#46](https://github.com/aimeerivers/howoldami/issues/46)) ([590fe5a](https://github.com/aimeerivers/howoldami/commit/590fe5aa945e723e513d305de42a0e7f534f8d12))
+
 ## [1.1.16](https://github.com/aimeerivers/howoldami/compare/v1.1.15...v1.1.16) (2025-06-07)
 
 
