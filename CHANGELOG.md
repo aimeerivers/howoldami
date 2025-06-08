@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/aimeerivers/howoldami/compare/v1.2.0...v1.2.1) (2025-06-07)
+
+
+### Documentation
+
+* Add README for age calculator project ([#48](https://github.com/aimeerivers/howoldami/issues/48)) ([e4f1f40](https://github.com/aimeerivers/howoldami/commit/e4f1f40b3b709207a4571f45f9d3fbe83fe8b410))
+
 ## [1.2.0](https://github.com/aimeerivers/howoldami/compare/v1.1.16...v1.2.0) (2025-06-07)
 
 
