@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.5](https://github.com/aimeerivers/howoldami/compare/v1.2.4...v1.2.5) (2025-09-18)
+
+
+### Continuous Integration
+
+* Update Release Please to v4 ([#56](https://github.com/aimeerivers/howoldami/issues/56)) ([235448e](https://github.com/aimeerivers/howoldami/commit/235448e8e94a424d4c3fb1fb9e8f1d9f2761e724))
+
 ## [1.2.4](https://github.com/aimeerivers/howoldami/compare/v1.2.3...v1.2.4) (2025-08-25)
 
 
