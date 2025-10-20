@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.7](https://github.com/aimeerivers/howoldami/compare/v1.2.6...v1.2.7) (2025-10-20)
+
+
+### Chores
+
+* Update eslint-config-plus-prettier to 4.2.3 ([#60](https://github.com/aimeerivers/howoldami/issues/60)) ([6aae055](https://github.com/aimeerivers/howoldami/commit/6aae0558f8185c1e5b58af007e2dc5f7d3c19046))
+
 ## [1.2.6](https://github.com/aimeerivers/howoldami/compare/v1.2.5...v1.2.6) (2025-09-21)
 
 
