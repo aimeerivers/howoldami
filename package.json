@@ -2,16 +2,16 @@
   "name": "howoldami",
   "version": "1.2.8",
   "description": "a simple age calculator",
-  "homepage": "https://github.com/aimeerivers/howoldami#readme",
+  "homepage": "https://github.com/druewilding/howoldami#readme",
   "bugs": {
-    "url": "https://github.com/aimeerivers/howoldami/issues"
+    "url": "https://github.com/druewilding/howoldami/issues"
   },
   "license": "ISC",
   "author": "aimee rivers",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aimeerivers/howoldami.git"
+    "url": "git+https://github.com/druewilding/howoldami.git"
   },
   "type": "module",
   "scripts": {
