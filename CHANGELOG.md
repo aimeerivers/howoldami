@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.9](https://github.com/druewilding/howoldami/compare/v1.2.8...v1.2.9) (2025-11-22)
+
+
+### Chores
+
+* Update references to use druewilding ([#64](https://github.com/druewilding/howoldami/issues/64)) ([4c689dd](https://github.com/druewilding/howoldami/commit/4c689dd47e59b53a8ef2a20e858cb1ef77b7bc11))
+
 ## [1.2.8](https://github.com/druewilding/howoldami/compare/v1.2.7...v1.2.8) (2025-11-20)
 
 
