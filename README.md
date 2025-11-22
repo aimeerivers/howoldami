@@ -15,7 +15,7 @@ All with satisfying flip-clock animations that make you feel like you're watchin
 
 ## Try it out!
 
-Visit **[aimeerivers.com/howoldami](https://www.aimeerivers.com/howoldami/)** to discover your age in unnecessary but delightful detail.
+Visit **[druewilding.com/howoldami](https://www.druewilding.com/howoldami/)** to discover your age in unnecessary but delightful detail.
 
 ## Features
 
